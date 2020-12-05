@@ -53,6 +53,7 @@ const circle = (ctx, type, color, radius, p) => {
     });
 };
 
+// Not used currently
 const rect = (ctx, stroke, color, x, y, w, h) => {
     if (!stroke) {
         ctx.fillStyle = color;
@@ -128,7 +129,7 @@ const main = () => {
             setTriangle();
         }
 
-        rect(ctx, false, "white", 0, 0, canvas.width, canvas.height);
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
 
         // Create point pairs beforehand
         const pointPairs = permute(points);
