@@ -64,6 +64,10 @@ const rect = (ctx, stroke, color, x, y, w, h) => {
     }
 };
 
+const clearRect = (ctx, x, y, w, h) => {
+    ctx.clearRect(x, y, w, h);
+};
+
 const text = (ctx, stroke, color, font, text, x, y) => {
     ctx.font = font;
     if (!stroke) {
@@ -129,7 +133,7 @@ const main = () => {
             setTriangle();
         }
 
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        clearRect(ctx, 0, 0, canvas.width, canvas.height);
 
         // Create point pairs beforehand
         const pointPairs = permute(points);
