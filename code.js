@@ -53,6 +53,7 @@ const circle = (ctx, type, color, radius, p) => {
     });
 };
 
+// Not used currently
 const rect = (ctx, stroke, color, x, y, w, h) => {
     if (!stroke) {
         ctx.fillStyle = color;
@@ -61,6 +62,10 @@ const rect = (ctx, stroke, color, x, y, w, h) => {
         ctx.strokeStyle = color;
         ctx.strokeRect(x, y, w, h);
     }
+};
+
+const clearRect = (ctx, x, y, w, h) => {
+    ctx.clearRect(x, y, w, h);
 };
 
 const text = (ctx, stroke, color, font, text, x, y) => {
@@ -128,7 +133,7 @@ const main = () => {
             setTriangle();
         }
 
-        rect(ctx, false, "white", 0, 0, canvas.width, canvas.height);
+        clearRect(ctx, 0, 0, canvas.width, canvas.height);
 
         // Create point pairs beforehand
         const pointPairs = permute(points);
